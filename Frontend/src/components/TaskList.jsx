@@ -6,7 +6,7 @@ function TaskList() {
 
   useEffect(() => {
     const getTasks = async () => {
-      const response = await fetch("http://localhost:7000/api/tasks", {
+      const response = await fetch("api/tasks", {
         credentials: "include",
       });
 

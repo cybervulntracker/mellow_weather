@@ -1,5 +1,5 @@
 // One place that knows where the backend lives and how to talk to it.
-const BASE = import.meta.env.VITE_API_URL || "http://localhost:7000";
+const BASE = import.meta.env.VITE_API_URL || "";
 
 export class ApiError extends Error {
   constructor(message, status, data) {
