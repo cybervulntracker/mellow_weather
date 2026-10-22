@@ -1,0 +1,36 @@
+{
+  "name": "anshbackend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "ansh",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check:apis": "node scripts/checkApis.js",
+    "worker": "node worker.js",
+    "purge-sessions": "node scripts/purgeLegacySessions.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "argon2": "^0.45.1",
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "express-session": "^1.19.0",
+    "google-auth-library": "^11.2.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4",
+    "nodemailer": "^10.1.0",
+    "nodemon": "^3.1.14",
+    "qrcode": "^1.5.4",
+    "tz-lookup": "^6.1.25",
+    "web-push": "^3.6.7"
+  }
+}
