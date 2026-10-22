@@ -1,5 +1,12 @@
 
-# 1. Send backend API requests to Render
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Proxy API requests to Render
 [[redirects]]
   from = "/api"
   to = "https://mellow-weather.onrender.com/api"
@@ -12,7 +19,7 @@
   status = 200
   force = true
 
-# 2. Let React handle all frontend routes
+# React Router fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
