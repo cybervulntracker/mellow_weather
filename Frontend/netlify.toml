@@ -1,0 +1,19 @@
+
+# 1. Send backend API requests to Render
+[[redirects]]
+  from = "/api"
+  to = "https://mellow-weather.onrender.com/api"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://mellow-weather.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# 2. Let React handle all frontend routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
