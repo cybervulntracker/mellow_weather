@@ -108,3 +108,8 @@
 .page > .kpis, .page > .reveal { margin-bottom: 16px; }
 .page > .reveal.is-in:last-child { margin-bottom: 0; }
 .fav__actions { flex-wrap: wrap; gap: 6px; } .fav__actions .btn { flex-shrink: 0; white-space: nowrap; }
+/* ---------- search suggestions must never be covered by cards ---------- */
+.page-head, .home-head { position: relative; z-index: 20; }
+:is(.page, .stack, .grid-2, .grid-2-1, .home-main, .home-aside, .card) > *:focus-within,
+.card:focus-within { position: relative; z-index: 20; }
+.placesearch { z-index: 20; }
