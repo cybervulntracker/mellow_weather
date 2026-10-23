@@ -170,15 +170,82 @@
 .verify-banner .link-btn { color: inherit; text-decoration: underline; }
 
 /* search suggestions */
-.placesearch { position: relative; width: 440px; max-width: 100%; }
-.placesearch .searchbar { width: 100%; }
-.suggest { position: absolute; z-index: 50; top: calc(100% + 6px); left: 0; right: 0; max-height: 340px; overflow-y: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 6px; }
-.suggest__item { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 8px; cursor: pointer; color: var(--text-3); }
-.suggest__item.is-active { background: var(--accent-soft); }
-.suggest__text { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
-.suggest__text strong { color: var(--text); font-weight: 600; }
-.suggest__text span { font-size: 12.5px; }
-.suggest__note { padding: 10px; color: var(--text-3); font-size: 13px; }
+
+/* ---------- search suggestions ---------- */
+
+/* CHANGED: Added z-index so the search component can appear
+   above nearby weather cards and other page elements. */
+.placesearch {
+  position: relative;
+  z-index: 100;
+  width: 440px;
+  max-width: 100%;
+}
+
+/* EXISTING: Keeps the search bar fitted to its container. */
+.placesearch .searchbar {
+  width: 100%;
+}
+
+/* CHANGED: Increased z-index and added box-sizing.
+   This helps the dropdown appear above overlapping siblings
+   and prevents its border/padding from affecting its width. */
+.suggest {
+  position: absolute;
+  z-index: 101;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  max-height: 340px;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+}
+
+/* EXISTING: Suggestion row layout and hover interaction. */
+.suggest__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-3);
+}
+
+/* EXISTING: Highlights the active suggestion. */
+.suggest__item.is-active {
+  background: var(--accent-soft);
+}
+
+/* EXISTING: Aligns the city name and its location details. */
+.suggest__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.suggest__text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.suggest__text span {
+  font-size: 12.5px;
+}
+
+/* EXISTING: Displays loading, error, and other suggestion notes. */
+.suggest__note {
+  padding: 10px;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
 
 /* alerts */
 .alerts { display: flex; flex-direction: column; gap: 8px; }
